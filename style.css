@@ -1,0 +1,172 @@
+body{
+	font-family: sans-serif;
+	color: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #2d2733;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #e92021;
+}
+
+.world-map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: max-content;
+	height: max-content;
+	min-height: 30em;
+	background-color: #151218;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+svg {
+	width: 100vw;
+	height: 100vh;
+}
+
+path {
+	fill: #1a1a1a;
+	stroke: #e92021;
+	transition: 100ms;
+}
+
+path:hover {
+	fill: #e92021;
+}
+
+.side-panel {
+	position: fixed;
+	background-color: #1d1a20;
+	padding: 2em;
+	top: 0;
+	left: -30em;
+	width: 100%;
+	max-width: 30em;
+	height: 100vh;
+	transition: 
+		transition: none !important;
+	overflow: scroll;
+	z-index: 1;
+}
+
+.side-panel .container {
+	padding-block: 2em;
+	transition: 200ms ease-out;
+}
+
+.side-panel-open{left: 0;}
+.hide {opacity: 0;}
+
+.close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 5em;
+	height: 5em;
+	border: none;
+	background-color: #1a1a1a;
+	color: #fff;
+	transition: 100ms;
+	cursor: pointer;
+}
+
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	user-select: none;
+	transition: 200ms;
+}
+
+.close-btn i {
+	font-size: 2em;
+}
+
+.close-btn:hover{
+	background-color: ##e92021;
+}
+
+.country-flag {
+	width: 60%;
+	max-width: 20em;
+	margin-block: 1em;
+}
+
+.side-panel .container > ul {
+	margin-top: 2em;
+	list-style: none;
+}
+
+.side-panel .container > ul > li {
+	margin-bottom: 2em;
+}
+
+.side-panel li {
+	margin-bottom: 1em;
+	font-size: 1.2em;
+}
+
+.side-panel ul ul {
+	margin-top: 1em;
+	font-size: 0.7em;
+	list-style: circle;
+	padding-left: 2em;
+}
+
+.side-panel strong {
+	color: #dcbfff;
+}
+
+.zoom-controls {
+	position: fixed;
+	top: 1em;
+	right: 1em;
+}
+
+.zoom-controls button {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	font-size: 2em;
+	background-color: #1a1a1a;
+	color: #fff;
+	border: 1px #dcbfff solid;
+	cursor: pointer;
+}
+
+.zoom-controls button:hover {
+	background-color: #2e2a33;
+}
+
+button:disabled {
+	background-color: #1d1a20;
+	border: 1px #1a1a1a solid;
+	cursor: default;
+	color: #333;
+}
+
+.zoom-out {
+	margin-bottom: 10px;
+}
