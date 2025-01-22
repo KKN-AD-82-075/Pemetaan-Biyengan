@@ -26,32 +26,35 @@ body{
 	background: #e92021;
 }
 
-.world-map {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: max-content;
-	height: max-content;
-	min-height: 30em;
-	background-color: #151218;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
 svg {
-	width: 100vw;
-	height: 100vh;
+	position: fixed;
+	transform: scale(10);
+	width: 80vw;
+	height: 60vh;
+	top: -60vw;
+	right: -320vh;
 }
 
+
 path {
-	fill: #1a1a1a;
 	stroke: #e92021;
 	transition: 100ms;
 }
 
 path:hover {
 	fill: #e92021;
+}
+
+path:unselectable {
+	pointer-events: none;
+    fill: #1a1a1a;
+}
+
+path:sawah {
+	pointer-events: visiblePainted;
+    fill: #1a1a1a;
+    cursor: default
 }
 
 .side-panel {
@@ -63,8 +66,7 @@ path:hover {
 	width: 100%;
 	max-width: 30em;
 	height: 100vh;
-	transition: 
-		transition: none !important;
+	transition: none !important;
 	overflow: scroll;
 	z-index: 1;
 }
@@ -105,7 +107,7 @@ path:hover {
 }
 
 .close-btn:hover{
-	background-color: ##e92021;
+	background-color: #e92021;
 }
 
 .country-flag {
@@ -137,36 +139,4 @@ path:hover {
 
 .side-panel strong {
 	color: #dcbfff;
-}
-
-.zoom-controls {
-	position: fixed;
-	top: 1em;
-	right: 1em;
-}
-
-.zoom-controls button {
-	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	font-size: 2em;
-	background-color: #1a1a1a;
-	color: #fff;
-	border: 1px #dcbfff solid;
-	cursor: pointer;
-}
-
-.zoom-controls button:hover {
-	background-color: #2e2a33;
-}
-
-button:disabled {
-	background-color: #1d1a20;
-	border: 1px #1a1a1a solid;
-	cursor: default;
-	color: #333;
-}
-
-.zoom-out {
-	margin-bottom: 10px;
 }
