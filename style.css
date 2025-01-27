@@ -1,6 +1,7 @@
-body{
+body {
 	font-family: sans-serif;
 	color: #fff;
+	overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 * {
@@ -26,16 +27,14 @@ body{
 	background: #e92021;
 }
 
-
 svg {
 	position: fixed;
 	transform: scale(10);
 	width: 80vw;
 	height: 60vh;
-	top: -60vw;
-	right: -320vh;
+	top: -57vw;
+	right: -350vh;
 }
-
 
 path {
 	stroke: #e92021;
@@ -48,13 +47,13 @@ path:hover {
 
 path:unselectable {
 	pointer-events: none;
-    fill: #1a1a1a;
+	fill: #1a1a1a;
 }
 
 path:sawah {
 	pointer-events: visiblePainted;
-    fill: #1a1a1a;
-    cursor: default
+	fill: #1a1a1a;
+	cursor: default;
 }
 
 .side-panel {
@@ -66,8 +65,9 @@ path:sawah {
 	width: 100%;
 	max-width: 30em;
 	height: 100vh;
+	overflow-y: auto; /* Enable vertical scrolling */
+	overflow-x: hidden; /* Prevent horizontal scrolling */
 	transition: none !important;
-	overflow: scroll;
 	z-index: 1;
 }
 
@@ -76,8 +76,13 @@ path:sawah {
 	transition: 200ms ease-out;
 }
 
-.side-panel-open{left: 0;}
-.hide {opacity: 0;}
+.side-panel-open {
+	left: 0;
+}
+
+.hide {
+	opacity: 0;
+}
 
 .close-btn {
 	position: absolute;
@@ -92,6 +97,14 @@ path:sawah {
 	cursor: pointer;
 }
 
+.close-btn i {
+	font-size: 2em;
+}
+
+.close-btn:hover {
+	background-color: #e92021;
+}
+
 .loading {
 	position: absolute;
 	top: 50%;
@@ -100,14 +113,6 @@ path:sawah {
 	pointer-events: none;
 	user-select: none;
 	transition: 200ms;
-}
-
-.close-btn i {
-	font-size: 2em;
-}
-
-.close-btn:hover{
-	background-color: #e92021;
 }
 
 .country-flag {
@@ -139,4 +144,64 @@ path:sawah {
 
 .side-panel strong {
 	color: #dcbfff;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+	.side-panel {
+		width: 100%;
+		max-width: 25em;
+	}
+	
+	.close-btn {
+		width: 4em;
+		height: 4em;
+	}
+
+	.close-btn i {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 90%;
+	}
+
+	.side-panel {
+		padding: 1.5em;
+	}
+
+	.side-panel .container {
+		padding-block: 1.5em;
+	}
+
+	.country-flag {
+		width: 80%;
+	}
+}
+
+@media (max-width: 480px) {
+	.side-panel {
+		width: 100%;
+		left: -100%;
+		padding: 1em;
+	}
+
+	.side-panel-open {
+		left: 0;
+	}
+
+	.close-btn {
+		width: 3em;
+		height: 3em;
+	}
+
+	.close-btn i {
+		font-size: 1.2em;
+	}
+
+	.country-flag {
+		width: 100%;
+	}
 }
