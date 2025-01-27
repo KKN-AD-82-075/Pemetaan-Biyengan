@@ -10,4 +10,4 @@ Peta digital interaktif yang menggambarkan Dukuh Biyengan.
 ## 🌐 Website
 | Situs                                                               | Deskripsi                                                          |
 | ------------------------------------------------------------------  | ------------------------------------------------------------------ |
-|                           |
+| [Deployment Demo](https://kkn-ad-82-075.github.io/Pemetaan-Biyengan/)                          |
